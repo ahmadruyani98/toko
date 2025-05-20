@@ -2,27 +2,45 @@
 <html>
 <head>
     <title>Toko Kue Ceria</title>
-</head>
+    <style>
+        .kue-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
+        .harga {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .keranjang-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
 <body>
     <h1>Selamat Datang di Toko Kue Ceria!</h1>
 
     <h2>Menu Kue</h2>
     <ul id="daftar-kue">
-        <li>
-            <img src="kue_coklat.jpg" alt="Kue Coklat">
+        <li class="kue-item">
             <span>Kue Coklat</span>
-            <button onclick="tambahKeKeranjang('Kue Coklat', 25000)">Tambah ke Keranjang - Rp 25.000</button>
+            <div class="harga">Rp 25.000</div>
+            <button onclick="tambahKeKeranjang(this.parentNode.querySelector('span').textContent)">Tambah ke Keranjang</button>
         </li>
-        <li>
-            <img src="kue_vanila.jpg" alt="Kue Vanila">
+        <li class="kue-item">
             <span>Kue Vanila</span>
-            <button onclick="tambahKeKeranjang('Kue Vanila', 20000)">Tambah ke Keranjang - Rp 20.000</button>
+            <div class="harga">Rp 20.000</div>
+            <button onclick="tambahKeKeranjang(this.parentNode.querySelector('span').textContent)">Tambah ke Keranjang</button>
         </li>
-        <li>
-            <img src="kue_strawberry.jpg" alt="Kue Strawberry">
+        <li class="kue-item">
             <span>Kue Strawberry</span>
-            <button onclick="tambahKeKeranjang('Kue Strawberry', 30000)">Tambah ke Keranjang - Rp 30.000</button>
+            <div class="harga">Rp 30.000</div>
+            <button onclick="tambahKeKeranjang(this.parentNode.querySelector('span').textContent)">Tambah ke Keranjang</button>
         </li>
     </ul>
 
@@ -34,6 +52,7 @@
     <p>Total: Rp <span id="total-harga">0</span></p>
 
     <button onclick="checkout()">Checkout</button>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
